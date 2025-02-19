@@ -821,6 +821,14 @@ is set to true. Defaults to ZONAL.`,
 				Description: `The type of the instance. The valid values are:- 'SQL_INSTANCE_TYPE_UNSPECIFIED', 'CLOUD_SQL_INSTANCE', 'ON_PREMISES_INSTANCE' and 'READ_REPLICA_INSTANCE'.`,
 			},
 
+			"tags": {
+				Type:        schema.TypeMap,
+				Optional:    true,
+				Computed:    true,
+				Elem:        &schema.Schema{Type: schema.TypeString},
+				Description: `Tag keys and tag values that are bound to this instance. You must represent each item in the map as: <tag-key-namespaced-name> : <tag-value-short-name>`,
+			},
+
 			"replica_configuration": {
 				Type:     schema.TypeList,
 				Optional: true,
